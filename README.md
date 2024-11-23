@@ -1,4 +1,9 @@
 # banana engine
+
+[![Go Report Card](https://goreportcard.com/badge/github.com/dfirebaugh/banana)](https://goreportcard.com/report/github.com/dfirebaugh/banana)
+[![Go Reference](https://pkg.go.dev/badge/github.com/dfirebaugh/banana.svg)](https://pkg.go.dev/github.com/dfirebaugh/banana)
+
+
 banana engine is a 2d graphics engine.
 
 currently supported
