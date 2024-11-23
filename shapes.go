@@ -7,11 +7,8 @@ import (
 )
 
 type TextRenderOptions struct {
-	X, Y, Size        float32
-	Color             color.Color
-	StencilWriteValue uint8
-	StencilTestValue  uint8
-	ScissorRect       [4]float32
+	X, Y, Size float32
+	Color      color.Color
 }
 
 func RenderText(text string, options *TextRenderOptions) {
@@ -25,7 +22,6 @@ func RenderText(text string, options *TextRenderOptions) {
 
 type Renderable interface {
 	GetVertices(screenWidth, screenHeight int) []graphics.Vertex
-	GetFramebuffer() uint32
 }
 
 func RenderShape(shape Renderable) {

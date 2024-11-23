@@ -7,14 +7,12 @@ import (
 )
 
 type Vertex struct {
-	X, Y        float32
-	Color       color.Color
-	Framebuffer uint32
+	X, Y  float32
+	Color color.Color
 }
 
 type Polygon struct {
-	Vertices    []Vertex
-	Framebuffer uint32
+	Vertices []Vertex
 }
 
 func colorToVec(c color.Color) [4]float32 {
@@ -49,8 +47,4 @@ func (t *Polygon) GetVertices(screenWidth, screenHeight int) []graphics.Vertex {
 	}
 
 	return result
-}
-
-func (p *Polygon) GetFramebuffer() uint32 {
-	return p.Framebuffer
 }

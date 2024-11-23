@@ -12,7 +12,6 @@ type Segment struct {
 	Color                 color.Color
 	StencilWriteValue     uint8
 	StencilTestValue      uint8
-	Framebuffer           uint32
 }
 
 func (l *Segment) GetVertices(screenWidth, screenHeight int) []graphics.Vertex {
@@ -61,8 +60,4 @@ func (l *Segment) GetStencilTestValue() uint8 {
 
 func (l *Segment) GetStencilWriteValue() uint8 {
 	return l.StencilWriteValue
-}
-
-func (l *Segment) GetFramebuffer() uint32 {
-	return l.Framebuffer
 }

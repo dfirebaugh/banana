@@ -11,7 +11,6 @@ import (
 
 type Renderable interface {
 	GetVertices(screenWidth, screenHeight int) []Vertex
-	GetFramebuffer() uint32
 }
 
 type Font interface{}
@@ -29,11 +28,8 @@ type TextureRenderOptions struct {
 }
 
 type TextRenderOptions struct {
-	X, Y, Size        float32
-	Color             color.Color
-	StencilWriteValue uint8
-	StencilTestValue  uint8
-	ScissorRect       [4]float32
+	X, Y, Size float32
+	Color      color.Color
 }
 
 type OpCode float32
@@ -59,10 +55,6 @@ type Vertex struct {
 	TexCoord     [2]float32
 	TextureIndex float32
 	FontIndex    float32
-	// StencilWriteValue uint8
-	// StencilTestValue  uint8
-	// ScissorRect       [4]float32
-	Framebuffer uint32
 }
 
 type Framebuffer interface {
@@ -83,7 +75,6 @@ type GraphicsBackend interface {
 	InputManager
 	EventManager
 	TextureManager
-	// Surface
 	Clear(c color.Color)
 	Close()
 	Init()
@@ -99,12 +90,6 @@ type GraphicsBackend interface {
 	UnbindFramebuffer()
 	Begin()
 	End()
-}
-
-type StencilManager interface {
-	BeginStencil()
-	EndStencil()
-	DisableStencil()
 }
 
 type TextureManager interface {

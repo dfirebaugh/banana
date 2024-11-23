@@ -9,7 +9,6 @@ import (
 type Circle struct {
 	X, Y, Radius float32
 	Color        color.Color
-	Framebuffer  uint32
 }
 
 func (c *Circle) GetVertices(screenWidth, screenHeight int) []graphics.Vertex {
@@ -47,8 +46,4 @@ func (c *Circle) GetVertices(screenWidth, screenHeight int) []graphics.Vertex {
 		result = append(result, v)
 	}
 	return result
-}
-
-func (c *Circle) GetFramebuffer() uint32 {
-	return c.Framebuffer
 }

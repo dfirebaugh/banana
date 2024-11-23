@@ -9,7 +9,6 @@ import (
 type Rect struct {
 	X, Y, Width, Height, Radius float32
 	Color                       color.Color
-	framebuffer                 uint32
 }
 
 func (r *Rect) GetVertices(screenWidth, screenHeight int) []graphics.Vertex {
@@ -40,16 +39,15 @@ func (r *Rect) GetVertices(screenWidth, screenHeight int) []graphics.Vertex {
 			r.Radius = 1
 		}
 		v := graphics.Vertex{
-			FsQuadPos:   [2]float32{vertices[i*2], vertices[i*2+1]},
-			ShapePos:    [2]float32{normX + halfWidth/float32(screenWidth)*2.0, normY - halfHeight/float32(screenHeight)*2.0},
-			LocalPos:    [2]float32{vertices[i*2], vertices[i*2+1]},
-			OpCode:      graphics.OP_CODE_RECT,
-			Radius:      r.Radius,
-			Width:       r.Width,
-			Height:      r.Height,
-			Color:       color,
-			Resolution:  [2]float32{float32(screenWidth), float32(screenHeight)},
-			Framebuffer: r.framebuffer,
+			FsQuadPos:  [2]float32{vertices[i*2], vertices[i*2+1]},
+			ShapePos:   [2]float32{normX + halfWidth/float32(screenWidth)*2.0, normY - halfHeight/float32(screenHeight)*2.0},
+			LocalPos:   [2]float32{vertices[i*2], vertices[i*2+1]},
+			OpCode:     graphics.OP_CODE_RECT,
+			Radius:     r.Radius,
+			Width:      r.Width,
+			Height:     r.Height,
+			Color:      color,
+			Resolution: [2]float32{float32(screenWidth), float32(screenHeight)},
 		}
 		result = append(result, v)
 	}
@@ -63,8 +61,4 @@ func (r *Rect) IsWithinBounds(px, py float32) bool {
 	bottom := r.Y + r.Height/2
 
 	return px >= left && px <= right && py >= top && py <= bottom
-}
-
-func (r *Rect) GetFramebuffer() uint32 {
-	return r.framebuffer
 }
