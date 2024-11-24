@@ -4,7 +4,7 @@ import (
 	"image/color"
 
 	"github.com/dfirebaugh/banana"
-	"github.com/dfirebaugh/banana/gui"
+	"github.com/dfirebaugh/banana/exp/gui"
 )
 
 type Label struct {

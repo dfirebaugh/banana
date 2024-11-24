@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	"github.com/dfirebaugh/banana"
-	"github.com/dfirebaugh/banana/gui"
+	"github.com/dfirebaugh/banana/exp/gui"
 )
 
 type surfaceHandle struct {

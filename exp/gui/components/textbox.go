@@ -5,7 +5,7 @@ import (
 	"strings"
 
 	"github.com/dfirebaugh/banana"
-	"github.com/dfirebaugh/banana/gui"
+	"github.com/dfirebaugh/banana/exp/gui"
 )
 
 type TextBox struct {
