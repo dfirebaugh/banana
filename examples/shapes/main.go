@@ -4,7 +4,7 @@ import (
 	"math"
 
 	"github.com/dfirebaugh/banana"
-	"github.com/dfirebaugh/banana/gui"
+	"github.com/dfirebaugh/banana/exp/gui"
 	"github.com/dfirebaugh/banana/pkg/input"
 	"golang.org/x/image/colornames"
 )
